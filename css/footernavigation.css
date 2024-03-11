@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+:root {
+    font-size: 16px;
+    font-family: "Rajdhani", sans-serif;
+    --text-primary: #000;
+    --text-second: #7f7070;
+    --text-third: #e3433e;
+    --background-primary: #ffffff;
+    --background-second: #000000;
+    --scroll-track-primary: #eaeaea;
+    --scroll-track-secondary: #595959;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*Scroll Bar Style*/
+body::-webkit-scrollbar{
+    width: .4rem;
+}
+
+body::-webkit-scrollbar-track{
+    background: #eaeaea;
+    border-radius: .2rem;
+
+}
+
+body::-webkit-scrollbar-thumb{
+    background: var(--text-third);
+    border-radius: .2rem;
+}
+
+/*Navigation*/
+nav {
+    padding: 20px 20px;
+}
+
+nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav li {
+    height: 50px;
+    display: inline-block;
+    position: relative;
+}
+
+nav a {
+    font-size: 1.1rem;
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: var(--text-primary);
+    transition: all .3s ease 0s;
+    position: relative;
+}
+
+li ul.dropdown {
+    width: 100%;
+    position: absolute;
+    z-index: 999;
+    display: none;
+}
+
+/*Move Logo to left*/
+nav li:first-child {
+    margin-right: auto;
+}
+
+nav li:last-child {
+    margin-left: auto;
+}
+
+.logo {
+    height: 50px;
+    width: 130px;
+}
+
+.logo img {
+    height: 100%;
+    padding-left: 10px;
+}
+
+/*Move Instagram Button left and set up*/
+nav li.ig-button {
+    margin-left: auto;
+    width: 130px;
+    background-color: var(--background-second);
+    border-radius: 19px;
+    transition: .4s ease;
+}
+
+.button-text {
+    color: var(--text-second);
+    transition: .4s ease;
+}
+
+/*Navigation fro thin or mobile display*/
+.sidebar{
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    width: auto;
+    z-index: 999;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sidebar-content {
+    filter: drop-shadow(0 0.05rem .2rem rgb(203, 203, 203));
+    background-color: var(--background-primary);
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.close-button {
+    position: relative;
+    left: 76px;
+    background-color: var(--background-primary);
+}
+
+
+/*Navigation Animation*/
+ul li a:hover {
+    color: var(--text-third);
+}
+
+ul li:hover ul.dropdown {
+    display: block;
+    background-color: var(--background-primary);
+    border-radius: .5rem;
+    filter: drop-shadow(0 0.05rem .2rem rgb(203, 203, 203));
+}
+
+li.ig-button:hover {
+    background-color: var(--text-third);
+}
+
+li a.button-text:hover {
+    color: var(--text-primary);
+}
+
+.menu-button{
+    display: none;
+}
+
+@media(max-width: 800px) {
+    .hideOnMobile{
+        display: none;
+    }
+    .menu-button{
+        display: block;
+    }
+}
+
+/*Footer*/
+footer{
+    padding: 20px 0px;
+    width: 100%;
+    position: block;
+    margin: auto;
+    text-align: center;
+}
+
+footer ul {
+    list-style: none;
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.credit {
+    color: var(--text-second);
+}
+
+.footer-icons {
+    fill: var(--text-second);
+    width: 20px;
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+/*Scroll to Top*/
+#scroll-top {
+    cursor: pointer;
+    display: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    position: fixed;
+    z-index: 999;
+    right: 40px;
+    bottom: 40px;
+    background-color: var(--background-primary);
+    border: none;
+    filter: drop-shadow(0 0.05rem .3rem rgb(203, 203, 203));
+    transition: .4s ease;
+}
+
+#arrow {
+    transform: translate( 0px, 1px);
+}
+
+#scroll-top:hover {
+    background-color: var(--text-third);
+}
