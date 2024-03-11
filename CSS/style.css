@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+:root {
+    font-size: 16px;
+    font-family: "Rajdhani", sans-serif;
+    --text-primary: #000;
+    --text-second: #b9b9b9;
+    --text-third: #e4453f;
+    --background-primary: #ffffff;
+    --background-second: #232323;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*Portfolio Content*/
+h {
+    font-size: 1.4rem;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    display: block;
+}
+
+p1 {
+    font-size: 40px;
+    font-weight: 800;
+    font-family: "Rowdies", sans-serif;
+    color: rgba(255, 255, 255, 0.75);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.content {
+    position: center;
+    padding: 20px;
+}
+
+.content .personal-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    padding: 5px;
+}
+
+.content .personal-content .image-box {
+    height: 400px;
+    width: 400px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.content .personal-content .image-box .overlay {
+    position: absolute;
+    height: 400px;
+    width: 400px;
+    opacity: 0;
+    transition: .5s ease;
+    z-index: +1;
+}
+
+.content .personal-content .image-box img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: .5s ease;
+}
+
+/*Artwork Display*/
+.random-images-i-like {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.random-images-i-like .image-react {
+    height: 100%;
+    width: auto;
+    min-height: 200px;
+    max-height: 25vw;
+    padding: 5px 5px;
+}
+
+/*Content Animation*/
+.content .personal-content .image-box:hover .overlay{
+    opacity: 1;
+    filter: blur(0%);
+}
+
+.content .personal-content .image-box:hover img{
+    transform: scale(1.1);
+    filter: blur(10px) grayscale(50%) brightness(80%);
+}

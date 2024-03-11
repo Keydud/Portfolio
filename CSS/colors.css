@@ -1,0 +1,11 @@
+:root {
+    font-size: 16px;
+    font-family: "Rajdhani", sans-serif;
+    --text-primary: #000;
+    --text-second: #b9b9b9;
+    --text-third: #e3433e;
+    --background-primary: #ffffff;
+    --background-second: #000000;
+    --scroll-track-primary: #eaeaea;
+    --scroll-track-secondary: #595959;
+}
