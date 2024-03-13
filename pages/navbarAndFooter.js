@@ -1,4 +1,4 @@
-fetch('/components/navbar.html')
+fetch('../components/navbar.html')
     .then(response => response.text())
     .then(html => {
         // Create a temporary element to hold the fetched HTML content
@@ -19,7 +19,7 @@ fetch('/components/navbar.html')
         document.getElementById('navbar').innerHTML = tempElement.innerHTML;
     });
 
-fetch('/components/footer.html')
+fetch('../components/footer.html')
     .then(response => response.text())
     .then(html => {
         const tempElement = document.createElement('div');
