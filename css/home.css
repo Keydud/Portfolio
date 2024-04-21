@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+:root {
+    font-size: 16px;
+    font-family: "Rajdhani", sans-serif;
+    --text-primary: #000;
+    --text-second: #b9b9b9;
+    --text-third: #e3433e;
+    --background-primary: #ffffff;
+    --background-second: #000000;
+    --scroll-track-primary: #eaeaea;
+    --scroll-track-secondary: #595959;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#star-container {
+    position: fixed;
+    z-index: -2;
+}
+
+#disapear-text {
+    display: block;
+    height: 40px;
+    opacity: 1;
+    text-align: center;
+    font-weight: 900;
+    font-size: 40px;
+    padding: 40px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100px;
+    position: relative;
+    padding: 0px 60px;
+    top: -70px;
+}
+
+#container3D {
+    width: 600px;
+    height: 540px;
+}
+
+.home-page-icons {
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 65px;
+    gap: 30px;
+}
+
+.icons-and-text {
+    text-decoration: none;
+    color: inherit;
+}
+
+.icons-and-text, img {
+    width: 150px;
+}
+
+.icons-and-text, p {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+/*When verticle*/
+@media(max-width: 1219px){
+    .home-page-icons{
+        padding-top: 0px;
+    }
+}
