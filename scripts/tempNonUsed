@@ -1,0 +1,15 @@
+function animate(){
+    renderer.render(scene, camera);
+}
+
+renderer.setAnimationLoop(animate);// needed to constantly loop the stuff and stuff makes the resize function work
+
+// Call the resize function whenever the window is resized
+window.addEventListener("resize", onWindowResize);
+
+// Create resize function
+function onWindowResize() {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+}
