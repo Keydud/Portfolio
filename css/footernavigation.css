@@ -121,7 +121,7 @@ nav li.ig-button {
 .close-button {
     position: absolute;
     top: 10px;
-    left: 100px;
+    left: 85px;
     border: none;
     background-color: var(--background-primary);
 }
@@ -152,7 +152,7 @@ li a.button-text:hover {
     border: none;
     position: relative;
     top: 10px;
-    right: 5px;
+    padding-right: 20px;
     background-color: var(--background-primary);
 }
 
