@@ -65,6 +65,8 @@
         }
 
         //Sidebar functions
+        window.addEventListener('resize', hideSidebar);//new added 4/26/2024
+        
         function showSidebar() {
             const sidebar = document.getElementById('sidebar');
             sidebar.style.display = 'flex';
