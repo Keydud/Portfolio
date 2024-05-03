@@ -81,7 +81,7 @@ nav li.ig-button {
     color: var(--text-primary)!important;
 }
 
-body, .sidebar-content, .close-button, ul li:hover ul.dropdown, #scroll-top {
+body, .sidebar-content, .close-button, ul li:hover ul.dropdown, #scroll-top, .menu-button {
     background-color: var(--background-second)!important;
 }
 
