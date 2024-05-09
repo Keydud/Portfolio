@@ -73,6 +73,7 @@ li ul.dropdown {
 
 /*Move Logo to left*/
 .logo {
+    width: 130px;
     margin-right: auto;
 }
 
@@ -101,7 +102,7 @@ nav li.ig-button {
     top: 20px;
     right: 20px;
     width: auto;
-    z-index: 999;
+    z-index: 800;
     display: none;
     flex-direction: column;
     align-items: flex-start;
@@ -148,12 +149,17 @@ li a.button-text:hover {
 }
 
 .menu-button{
+    width: 130px;
     display: none;
     border: none;
     position: relative;
     top: 10px;
     padding-right: 20px;
     background-color: var(--background-primary);
+}
+
+.menu-button svg{
+    transform: translate(45px, 1px);
 }
 
 @media(max-width: 800px) {
@@ -210,7 +216,7 @@ footer ul {
     height: 40px;
     border-radius: 20px;
     position: fixed;
-    z-index: 999;
+    z-index: 800;
     right: 40px;
     bottom: 40px;
     background-color: var(--background-primary);
