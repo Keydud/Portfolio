@@ -4,41 +4,43 @@
     font-size: 16px;
     font-family: "Rajdhani", sans-serif;
     --text-primary: #000;
-    --text-second: #b9b9b9;
-    --text-third: #e4453f;
+    --text-second: #7f7070;
+    --text-third: #e3433e;
     --background-primary: #ffffff;
-    --background-second: #232323;
+    --background-second: #000000;
+    --scroll-track-primary: #eaeaea;
+    --scroll-track-secondary: #595959;
 }
 
-* {
+*{
     margin: 0;
     padding: 0;
 }
 
-/*Artwork Display*/
-.process-images-of-final-work {
-    width: 90vw;
+.creative-and-anim-flex{
     margin: auto;
+    padding-top: 30px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding-top: 30px;
+    gap: 5vw;
+    row-gap: 60px;
 }
 
-.process-images-of-final-work img {
-    cursor: pointer;
-    height: 100%;
-    width: auto;
-    min-height: 200px;
-    max-height: 25vw;
-    padding: 5px 5px;
-    border-radius: 15px;
-    filter: drop-shadow(0 0.3rem .15rem rgb(225, 225, 225));
+.creative-text {
+    font-weight: 900;
+    font-size:100px;
+    line-height: 85px;
 }
 
-/*Process content*/
-.content {
+#visual-art-animation{
+    background-color: gray;
+    width: 40vw;
+    height: 40vw;
+}
+
+.featured-work{
     width: 90vw;
     margin: auto;
     padding-top: 70px;
@@ -57,10 +59,23 @@ hr{
     margin: auto;
 }
 
+/*Thumbnails/Links for artwork*/
+p1 {
+    font-size: 4vw;
+    font-weight: 800;
+    font-family: "Rowdies", sans-serif;
+    color: rgba(255, 255, 255, 0.75);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
 .personal-content {
     padding-top: 10px;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
     gap: 20px;
@@ -70,7 +85,7 @@ hr{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 28vw;
+    height: 300px;
     width: 28vw;
     border-radius: 10px;
     overflow: hidden;
@@ -86,43 +101,42 @@ hr{
     z-index: +1;
 }
 
-p1 {
-    font-size: 4vw;
-    font-weight: 800;
-    font-family: "Rowdies", sans-serif;
-    color: rgba(255, 255, 255, 0.75);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-
 .personal-content .image-box img {
     width: inherit;
     height: inherit;
     object-fit: cover;
     transition: .5s ease;
 }
-/*Content Animation*/
-.overlay:hover {
+
+/*Thumbnail Animation*/
+.personal-content .image-box:hover .overlay{
     opacity: 1;
     filter: blur(0%);
 }
 
-.content .personal-content .image-box:hover img{
+.personal-content .image-box:hover img{
     transform: scale(1.1);
     filter: blur(10px) grayscale(50%) brightness(80%);
 }
 
 @media(max-width: 800px){
-    /*Process-work*/
+    /*Top bit*/
+    .creative-text{
+        font-size:15vw;
+        line-height: 12vw;
+    }
+
+    #visual-art-animation{
+        width: 75vw;
+        height: 75vw;
+    }
+
+    /*Featured/Redirection stuff*/
     .personal-content{
         flex-direction: column;
     }
 
     .personal-content .image-box{
-        height: 300px;
         width: 90vw;
     }
 
