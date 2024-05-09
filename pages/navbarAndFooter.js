@@ -25,4 +25,9 @@ fetch('../../components/footer.html')
         const tempElement = document.createElement('div');
         tempElement.innerHTML = html;
         document.getElementById('footer').innerHTML = tempElement.innerHTML;
-    })
+    });
+
+
+var str = '<link rel="icon" href="../../resources/star.png">';
+const head = document.head;
+head.insertAdjacentHTML('beforeend', str);
