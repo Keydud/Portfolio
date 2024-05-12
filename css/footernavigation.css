@@ -58,6 +58,7 @@ nav a {
     padding: 0 30px;
     text-decoration: none;
     display: flex;
+    text-align: center;
     align-items: center;
     color: var(--text-primary);
     transition: all .3s ease 0s;
@@ -92,7 +93,7 @@ nav li.ig-button {
 }
 
 .button-text {
-    color: var(--text-second);
+    color: var(--background-primary);
     transition: .4s ease;
 }
 
