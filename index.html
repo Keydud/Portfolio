@@ -4,32 +4,118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" type="text/css" href="../css/home.css">
+    <link rel="stylesheet" type="text/css" href="./css/home.css">
     <link rel="icon" href="./resources/star.png">
-    <script type="module" src="./scripts/glass.js"></script>
-    <script type="module" src="./scripts/inisibleText.js"></script>
     <script type="module" src="./scripts/star.js"></script>
 </head>
 <body>
     <div id="star-container"></div>
-    <div id="disapear-text"></div>
     <div class="container">
-        <div id="container3D"></div>
-        <div class="home-page-icons">
-            <a class="icons-and-text" href="./othercontent/construction.html">
-                <img src="./resources/science.png" alt="Computer science thumbnail">
-                <p>Projects</p>
-            </a>
-            <a class="icons-and-text" href="./pages/visualart/visualart.html">
-                <img src="./resources/drawing.png" alt="Illustration and design thumbnail">
-                <p>Visual Arts</p>
-            </a>
-            <a class="icons-and-text" href="./pages/othercontent/contact.html">
-                 <img src="./resources/me.png" alt="About me thumbnail">
-                <p>About Me</p>
-            </a>
-            <div class="icons-and-text"></div>
-        </div>
+        <a class="icons-and-text" href="./pages/projects/projects.html">
+            <img src="./resources/science.png" alt="Computer science thumbnail">
+            <p>Projects</p>
+        </a>
+        <a class="icons-and-text" href="./pages/visualart/visualart.html">
+            <img src="./resources/drawing.png" alt="Illustration and design thumbnail">
+            <p>Visual Arts</p>
+        </a>
+        <a class="icons-and-text" href="./pages/othercontent/contact.html">
+                <img src="./resources/me.png" alt="About me thumbnail">
+            <p>About Me</p>
+        </a>
     </div>
+
+    <div class="hi">Howdy</div>
+    <div class="hi">Howdy</div>
+    <div class="hi">Howdy</div>
+    <div class="hi">Howdy</div>
+    <div class="hi">Howdy</div>
+    <div class="hi">Howdy</div>
+    <div class="hi">Howdy</div>
+    <div class="hi">Howdy</div>
+    <div class="hi">Howdy</div>
+    <div class="hi">Howdy</div>
+    <div class="hi">Howdy</div>
+    <div class="hi">Howdy</div>
+    <div class="hi">Howdy</div>
+    <div class="hi">Howdy</div>
+    <div class="hi">Howdy</div>
+    <script>
+        /*
+        The code below creates an interactable snake of divs,
+        which follows the cursor of the user. Additionally it rearanges the divs
+        and changes the collors of the elements creating a cascading grdient 
+        effect.
+        */
+        const colors = ["#ffffff", "#9c86c9", "#523192", "#1f005c", "#1f005c", "#350368", "#4d0675", "#690a81", "#870e8d", "#99138b", "#a61981", "#b21f75", "#be2668", "#ca2d59", "#d73549", "#e3433e"]
+        colors.reverse();
+
+        //Area of Movement
+        const width = window.innerWidth;
+        const height = window.innerWidth;
+        const borderX = {x1:150, x2:width - 150};
+        const borderY = {y1:50, y2:height + 50};
+
+        //Setting the text to presentable position
+        const items = document.querySelector('.icons-and-text');
+        const itemsRect = items.getBoundingClientRect();
+        const mouse = {x:width / 2, y:itemsRect.top / 2}; //Initial mouse & text position
+
+        const texts = document.querySelectorAll('.hi');
+        let zIndex = -1;
+
+        texts.forEach((text, index) => {
+            text.x = 0;
+            text.y = 0;
+            
+            //Reordering
+            zIndex -= 1;
+            text.style.zIndex = zIndex;
+
+            //Coloring text
+            text.style.color = colors[index % colors.length];
+        })
+
+        window.addEventListener('mousemove', (e) => {
+            if(e.x < borderX.x1){
+                mouse.x = borderX.x1;
+            }else if(e.x > borderX.x2){
+                mouse.x = borderX.x2;
+            }else{
+                mouse.x = e.x;
+            }
+            
+            if(e.y < borderY.y1){
+                mouse.y = borderY.y1;
+            }else if(e.y > borderY.y2){
+                mouse.y = borderY.y2;
+            }else{
+                mouse.y = e.y
+            }
+        });
+
+        //Text Movement
+        function animateText() {
+            let x = mouse.x;
+            let y = mouse.y;
+
+            texts.forEach((text, index) => {
+                text.style.left = x + 'px';
+                text.style.top = y + 'px';
+
+                //Offset
+                text.x = x;
+                text.y = y;
+
+                const nextText = texts[index + 1] || texts[0];
+                x += (nextText.x - x) * .7;
+                y += (nextText.y - y) * .7;
+            });
+
+            requestAnimationFrame(animateText);
+        }
+
+        animateText();
+    </script>
 </body>
 </html>
