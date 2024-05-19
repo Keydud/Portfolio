@@ -26,20 +26,20 @@ const cross = loader.load('../resources/star.png');
 
 //Starfield
 const particlesGeo = new THREE.BufferGeometry;
-const particlesCnt = 100000;
+const particlesCnt = 1000;
 const posArray = new Float32Array(particlesCnt * 3);
 for(let i = 0; i < particlesCnt; i++){
-    posArray[i] = (Math.random() - 0.5) * 5;
+    posArray[i] = (Math.random() - 0.5) * 2.5;
 }
 particlesGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
 
 //Material
 const material = new THREE.PointsMaterial({
-    size: 0.03,
+    size: 0.04,
     map: cross,
     transparent: false,
     alphaTest: 0.3,
-    color: 0xe1e1e1
+    color: 0x000000
 });
 
 //Mesh
@@ -54,17 +54,6 @@ function onWindowResize() {
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-}
-
-//Mouse movement
-document.addEventListener('mousemove', aniParticles);
-
-let mouseX = 0;
-let mouseY = 0;
-
-function aniParticles(event){
-    mouseX = event.clientX;
-    mouseY = event.clientY;
 }
 
 const clock = new THREE.Clock();
